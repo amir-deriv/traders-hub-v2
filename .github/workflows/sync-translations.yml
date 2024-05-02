@@ -16,7 +16,11 @@ jobs:
             - name: Setup node
               uses: actions/setup-node@v3
               with:
-                  node-version: 20.x
+                  node-version: 18.x
+
+            - name: Install packages
+              shell: bash
+              run: npm i
 
             - name: Sync translations
               uses: deriv-com/translations/.github/actions/extract_and_sync_translations@main
