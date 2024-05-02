@@ -25,6 +25,15 @@ jobs:
                 - source: /crowdin/messages.json
                   translation: /translations/%two_letters_code%.json\n" > crowdin.yml
 
+          
+        - name: check if crowdin exists
+          run: |
+            if [ -f crowdin.yml ]; then
+              echo "crowdin.yml exists"
+            else
+              echo "crowdin.yml does not exist"
+            fi
+
         - name: Sync translations
           uses: deriv-com/translations/.github/actions/extract_and_sync_translations@main
           with:
