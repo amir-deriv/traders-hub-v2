@@ -27,12 +27,7 @@ jobs:
 
           
         - name: check if crowdin exists
-          run: |
-            if [ -f crowdin.yml ]; then
-              echo "crowdin.yml exists"
-            else
-              echo "crowdin.yml does not exist"
-            fi
+          run: ls -la
 
         - name: Sync translations
           uses: deriv-com/translations/.github/actions/extract_and_sync_translations@main
