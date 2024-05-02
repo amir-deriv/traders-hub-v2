@@ -24,7 +24,7 @@ jobs:
 
             - name: run extract
               shell: bash
-              run: node_modules/@deriv-com/translations/dist/deriv-extract-translations.cjs ./src
+              run: npx deriv-extract-translations ./src
 
             - name: Sync translations
               uses: deriv-com/translations/.github/actions/extract_and_sync_translations@main
