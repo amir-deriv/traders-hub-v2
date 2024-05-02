@@ -20,6 +20,10 @@ jobs:
 
             - name: Install packages
               shell: bash
+              run: npm i
+
+            - name: run extract
+              shell: bash
               run: node_modules/@deriv-com/translations/dist/deriv-extract-translations.cjs ./src
 
             - name: Sync translations
