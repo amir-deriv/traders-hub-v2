@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Analytics } from '@deriv-com/analytics';
 import { AppDataProvider, useWebsiteStatus } from '@deriv-com/api-hooks';
+import { Localize, localize } from '@deriv-com/translations';
 import { useDevice } from '@deriv-com/ui';
 import { WebSocketUtils } from '@deriv-com/utils';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -59,6 +60,8 @@ startInitPerformanceTimers();
 
 const signupRoute = window.location.pathname === '/signup';
 
+localize('hello world');
+
 root?.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
@@ -68,6 +71,7 @@ root?.render(
                         <RealAccountCreationProvider>
                             {!signupRoute && <Header />}
                             <App />
+                            <Localize i18n_default_text='hello' />
                             <AnalyticsConfigurator />
                         </RealAccountCreationProvider>
                     </CFDProvider>
