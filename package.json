@@ -11,8 +11,7 @@
         "test": "jest --passWithNoTests",
         "test:coverage": "jest --coverage --passWithNoTests",
         "test:report": "jest --collectCoverage",
-        "prepare": "husky install",
-        "extract": "deriv-extract-translations ./src --verbose"
+        "prepare": "husky install"
     },
     "dependencies": {
         "@deriv-com/analytics": "~1.4.13",
